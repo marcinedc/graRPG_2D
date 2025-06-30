@@ -10,7 +10,7 @@ To jest gra RPG 2D, w której gracz wciela się w bohatera, który wyrusza na wy
 ## Technologie
 
 ### Silnik gry
-- **Unity** - Silnik gier, który umożliwia tworzenie 2D i 3D gier. Używamy wersji Unity.
+- **Unity** - Silnik gier, który umożliwia tworzenie 2D i 3D gier. Używamy wersji Unity. Unity oferuje bogaty zestaw narzędzi, bibliotek i zasobów, umożliwiając szybkie prototypowanie oraz rozwój gier na wiele platform, takich jak PC, konsole, urządzenia mobilne czy przeglądarki internetowe. Dzięki intuicyjnemu edytorowi, obsłudze języka C#, wsparciu dla fizyki, animacji, systemów cząsteczkowych oraz integracji z popularnymi usługami (np. Ads, Analytics, multiplayer), Unity jest jedną z najczęściej wybieranych technologii do tworzenia zarówno gier niezależnych, jak i komercyjnych produkcji na dużą skalę. W naszym projekcie używamy aktualnej wersji Unity, aby zapewnić kompatybilność i wykorzystać najnowsze funkcje silnika.
 
 ### Język programowania
 - **C#** - Język programowania używany do skryptów w grze. Unity używa C# do tworzenia logiki gry.
