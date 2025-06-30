@@ -38,29 +38,79 @@ To jest gra RPG 2D, w której gracz wciela się w bohatera, który wyrusza na wy
 ### Platformy docelowe
 - **Windows** - Gra stworzona z myślą o tej platformie.
 
-##Paradygmat obiektowy
+## Paradygmat obiektowy
 
-##Polimorfizm
-```cssharp
-private void MouseFollow()
+## Polimorfizm
+```csharp
+public class EnemyHealth : MonoBehaviour
+{
+    [SerializeField] private int Health = 3;
+    
+    private int currentHealth;
+
+    private void Start()
     {
-        Vector3 Pos= Input.mousePosition;
-        Vector3 playerScreen = Camera.main.WorldToScreenPoint(playerMovement.transform.position);
+        currentHealth = Health;
+    }
+```
+## Hermetyzacja 
+```csharp
+    [SerializeField] private Transform weaponColider;
+    private PlayerMovement playerMovement;
+    private ActiveWeapon activeWeapon;
+    private PlayerMove playerMove; 
+    private Animator animator;
 
-        float angle = Mathf.Atan2(Pos.y, Pos.x) * Mathf.Rad2Deg;
-
-        if(Pos.x < playerScreen.x)
-        {
-            activeWeapon.transform.rotation = Quaternion.Euler(0, -180, angle);
-            weaponColider.transform.rotation = Quaternion.Euler(0, -180, 0);
-        }
-        else
-        {
-            activeWeapon.transform.rotation = Quaternion.Euler(0, 0, angle);
-            weaponColider.transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
+    private void Awake()
+    {
+        playerMovement = GetComponentInParent<PlayerMovement>();
+        activeWeapon = GetComponentInParent<ActiveWeapon>();
+        animator = GetComponent<Animator>();
+        playerMove = new PlayerMove();
     }
 
+    void OnEnable()
+    {
+        playerMove.Enable();
+    }
+
+    void Start()
+    {
+        playerMove.Combat.Smash.started += _ => Smash();
+    }
+
+    private void Update()
+    {
+        MouseFollow();
+    }
+
+    private void Smash()
+    {
+        animator.SetTrigger("Attack");
+        weaponColider.gameObject.SetActive(true);
+    }
+
+    public void DoneSmash()
+    {
+        weaponColider.gameObject.SetActive(false);
+    }
+```
+#Dziedziczenie
+```csharp
+public class EnemyAi : MonoBehaviour
+  {
+      private enum State {
+        Roaming
+      }
+
+      private State state;
+      private EnemyFollowPath enemyPathfinding;
+
+      private void Awake() {
+          enemyPathfinding = GetComponent<EnemyFollowPath>();
+          state = State.Roaming;
+      }
+```
 ## Instalacja
 
 Aby zainstalować i uruchomić grę na swoim komputerze, wykonaj poniższe kroki:
