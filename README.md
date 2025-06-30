@@ -38,6 +38,29 @@ To jest gra RPG 2D, w której gracz wciela się w bohatera, który wyrusza na wy
 ### Platformy docelowe
 - **Windows** - Gra stworzona z myślą o tej platformie.
 
+##Paradygmat obiektowy
+
+##Polimorfizm
+```cssharp
+private void MouseFollow()
+    {
+        Vector3 Pos= Input.mousePosition;
+        Vector3 playerScreen = Camera.main.WorldToScreenPoint(playerMovement.transform.position);
+
+        float angle = Mathf.Atan2(Pos.y, Pos.x) * Mathf.Rad2Deg;
+
+        if(Pos.x < playerScreen.x)
+        {
+            activeWeapon.transform.rotation = Quaternion.Euler(0, -180, angle);
+            weaponColider.transform.rotation = Quaternion.Euler(0, -180, 0);
+        }
+        else
+        {
+            activeWeapon.transform.rotation = Quaternion.Euler(0, 0, angle);
+            weaponColider.transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+    }
+
 ## Instalacja
 
 Aby zainstalować i uruchomić grę na swoim komputerze, wykonaj poniższe kroki:
