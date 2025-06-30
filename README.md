@@ -6,6 +6,8 @@ To jest gra RPG 2D, w której gracz wciela się w bohatera, który wyrusza na wy
 - Eksploracja świata: Gracz przemierza różne lokacje, takie jak lasy, jaskinie i zamki.
 ![Świat Gry](Screenshots/ŚwiatGry.png)
 - System walki z potworami.
+![walka](Screenshots/Walka1.png)
+![walka2](Screenshots/Walka2.png)
 - Historia: Interaktywna fabuła z dialogami.
 
 ## Technologie
