@@ -2,6 +2,13 @@
 
 To jest gra RPG 2D, w której gracz wciela się w bohatera, który wyrusza na wyprawę, aby uratować swoje królestwo przed potworami. Gra zawiera eksplorację, walke oraz rozwój postaci.
 
+Możliwy rozwój projektu:
+- Dodanie systemu Ekwipunku.
+- Rozbudowanie lokacji na wielu scenach.
+- Usprawnienie EnemyAi.
+- Dodanie shaderów i fizyki światła, dni i noce dynamicznie się zmieniają.
+- Ulepszenie animacji na wielu obiektach: przedmiotach, postaci, NPC.
+
 ### Funkcje:
 - Eksploracja świata: Gracz przemierza różne lokacje, takie jak lasy, jaskinie i zamki.
 ![Świat Gry](Screenshots/ŚwiatGry.png)
